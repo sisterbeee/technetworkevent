@@ -24,6 +24,7 @@ import speakerAmara from "@/assets/speaker-amara.jpg";
 import speakerTunde from "@/assets/speaker-tunde.jpg";
 import speakerPriya from "@/assets/speaker-priya.jpg";
 import speakerKai from "@/assets/speaker-kai.jpg";
+import speakerBuh from "@/assets/speaker-buh.jpg";
 
 /* ------------------------------------------------------------------ */
 /* Event constants                                                     */
@@ -44,6 +45,7 @@ const NAV_LINKS = [
 ];
 
 const SPEAKERS = [
+  { name: "Adubi Adebukola", role: "Web Developer · Social Media Manager · CEO, Bee's Collection", img: speakerBuh, tag: "Host" },
   { name: "Amara Okeke", role: "Principal Engineer · Anthropic", img: speakerAmara },
   { name: "Tunde Bakare", role: "Co-founder & CTO · Flutterwave", img: speakerTunde },
   { name: "Priya Raman", role: "Director of AI · DeepMind", img: speakerPriya },
@@ -313,7 +315,7 @@ function Speakers() {
           title="The people building tomorrow."
           subtitle="Operators, researchers, and founders who ship at the frontier."
         />
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {SPEAKERS.map((s, i) => (
             <motion.div
               key={s.name}
@@ -330,10 +332,15 @@ function Speakers() {
                   loading="lazy"
                   width={768}
                   height={896}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-card via-card/70 to-transparent" />
               </div>
+              {s.tag && (
+                <span className="absolute left-4 top-4 rounded-full border border-primary/40 bg-primary/15 px-2.5 py-1 font-mono-tech text-[10px] uppercase tracking-[0.18em] text-primary backdrop-blur-md">
+                  {s.tag}
+                </span>
+              )}
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h3 className="font-tech text-lg font-semibold text-foreground">{s.name}</h3>
                 <p className="mt-0.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
