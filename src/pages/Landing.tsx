@@ -208,7 +208,7 @@ function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
-          Edition 04 · Lagos
+          Edition 01 · Lagos
         </motion.div>
 
         <motion.h1
@@ -569,7 +569,7 @@ function Footer() {
       <div className="mx-auto mt-10 max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-start justify-between gap-2 border-t border-border/40 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Tech Network. All rights reserved.</p>
-          <p className="font-mono-tech tracking-[0.18em] uppercase">v 4.0 · Lagos Edition</p>
+          <p className="font-mono-tech tracking-[0.18em] uppercase">v 1.0 · Lagos Edition</p>
         </div>
       </div>
     </footer>
