@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
@@ -18,10 +18,6 @@ import {
   Twitter,
   Linkedin,
   Mail,
-  Cpu,
-  Rocket,
-  Code2,
-  Wand2,
 } from "lucide-react";
 
 import speakerAmara from "@/assets/speaker-amara.jpg";
