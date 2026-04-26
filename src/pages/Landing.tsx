@@ -540,23 +540,48 @@ function FAQSection() {
 
 function Footer() {
   return (
-    <footer className="relative border-t border-border/60 bg-card/30 py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center">
+    <footer className="relative border-t border-border/40 bg-gradient-to-b from-card/20 to-card/50 py-14">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <Wordmark />
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             {EVENT_TAGLINE}. {EVENT_DATE_LABEL} · {EVENT_LOCATION}.
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 text-sm md:items-end">
-          <a
-            href="mailto:hello@technetwork.dev"
-            className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Mail className="h-4 w-4" /> hello@technetwork.dev
-          </a>
-          <div className="flex items-center gap-2">
+        <div>
+          <p className="font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">
+            Get in touch
+          </p>
+          <div className="mt-4 flex flex-col gap-3 text-sm">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Mail className="h-4 w-4 text-primary" /> {CONTACT_EMAIL}
+            </a>
+            <a
+              href={`tel:${CONTACT_PHONE_TEL}`}
+              className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Phone className="h-4 w-4 text-primary" /> {CONTACT_PHONE_DISPLAY}
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-foreground transition-all hover:border-primary/60 hover:shadow-[0_0_18px_hsl(var(--primary)/0.4)]"
+            >
+              <MessageCircle className="h-3.5 w-3.5 text-primary" /> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div className="md:text-right">
+          <p className="font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">
+            Follow
+          </p>
+          <div className="mt-4 flex items-center gap-2 md:justify-end">
             {[
               { Icon: Twitter, href: "#" },
               { Icon: Github, href: "#" },
