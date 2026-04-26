@@ -211,7 +211,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary"
+          className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-4 py-1.5 font-mono-tech text-[11px] uppercase tracking-[0.24em] text-primary backdrop-blur-md"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -224,7 +224,7 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="mt-6 font-tech text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl"
+          className="mt-6 font-tech text-6xl font-bold leading-[0.92] tracking-[-0.04em] sm:text-7xl md:text-[8.5rem]"
         >
           <span className="block text-shimmer">{EVENT_NAME}</span>
         </motion.h1>
