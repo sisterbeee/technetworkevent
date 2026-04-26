@@ -18,6 +18,8 @@ import {
   Twitter,
   Linkedin,
   Mail,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 
 import speakerAmara from "@/assets/speaker-amara.jpg";
@@ -34,6 +36,13 @@ const EVENT_NAME = "TECH NETWORK";
 const EVENT_TAGLINE = "The Future of Tech Starts Here";
 const EVENT_DATE_LABEL = "October 19, 2026";
 const EVENT_LOCATION = "Ikorodu, Lagos";
+const CONTACT_EMAIL = "adubiadebukola788@gmail.com";
+const CONTACT_PHONE_DISPLAY = "+234 806 081 0552";
+const CONTACT_PHONE_TEL = "+2348060810552";
+const WHATSAPP_NUMBER = "2348060810552"; // international format, no +
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hi! I'd like to know more about Tech Network."
+)}`;
 // Target date for countdown (Oct 19, 2026 09:00 WAT / +01:00)
 const EVENT_TARGET = new Date("2026-10-19T09:00:00+01:00").getTime();
 
@@ -202,7 +211,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary"
+          className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-4 py-1.5 font-mono-tech text-[11px] uppercase tracking-[0.24em] text-primary backdrop-blur-md"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -215,7 +224,7 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="mt-6 font-tech text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl"
+          className="mt-6 font-tech text-6xl font-bold leading-[0.92] tracking-[-0.04em] sm:text-7xl md:text-[8.5rem]"
         >
           <span className="block text-shimmer">{EVENT_NAME}</span>
         </motion.h1>
@@ -531,23 +540,48 @@ function FAQSection() {
 
 function Footer() {
   return (
-    <footer className="relative border-t border-border/60 bg-card/30 py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center">
+    <footer className="relative border-t border-border/40 bg-gradient-to-b from-card/20 to-card/50 py-14">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <Wordmark />
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             {EVENT_TAGLINE}. {EVENT_DATE_LABEL} · {EVENT_LOCATION}.
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 text-sm md:items-end">
-          <a
-            href="mailto:hello@technetwork.dev"
-            className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Mail className="h-4 w-4" /> hello@technetwork.dev
-          </a>
-          <div className="flex items-center gap-2">
+        <div>
+          <p className="font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">
+            Get in touch
+          </p>
+          <div className="mt-4 flex flex-col gap-3 text-sm">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Mail className="h-4 w-4 text-primary" /> {CONTACT_EMAIL}
+            </a>
+            <a
+              href={`tel:${CONTACT_PHONE_TEL}`}
+              className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Phone className="h-4 w-4 text-primary" /> {CONTACT_PHONE_DISPLAY}
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-foreground transition-all hover:border-primary/60 hover:shadow-[0_0_18px_hsl(var(--primary)/0.4)]"
+            >
+              <MessageCircle className="h-3.5 w-3.5 text-primary" /> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div className="md:text-right">
+          <p className="font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">
+            Follow
+          </p>
+          <div className="mt-4 flex items-center gap-2 md:justify-end">
             {[
               { Icon: Twitter, href: "#" },
               { Icon: Github, href: "#" },
@@ -593,6 +627,15 @@ export default function Landing() {
         <FAQSection />
       </main>
       <Footer />
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.55)] transition-transform hover:scale-105 sm:bottom-8 sm:right-8"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </a>
     </div>
   );
 }
