@@ -627,6 +627,15 @@ export default function Landing() {
         <FAQSection />
       </main>
       <Footer />
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.55)] transition-transform hover:scale-105 sm:bottom-8 sm:right-8"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </a>
     </div>
   );
 }
