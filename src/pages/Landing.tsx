@@ -36,6 +36,13 @@ const EVENT_NAME = "TECH NETWORK";
 const EVENT_TAGLINE = "The Future of Tech Starts Here";
 const EVENT_DATE_LABEL = "October 19, 2026";
 const EVENT_LOCATION = "Ikorodu, Lagos";
+const CONTACT_EMAIL = "adubiadebukola788@gmail.com";
+const CONTACT_PHONE_DISPLAY = "+234 806 081 0552";
+const CONTACT_PHONE_TEL = "+2348060810552";
+const WHATSAPP_NUMBER = "2348060810552"; // international format, no +
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hi! I'd like to know more about Tech Network."
+)}`;
 // Target date for countdown (Oct 19, 2026 09:00 WAT / +01:00)
 const EVENT_TARGET = new Date("2026-10-19T09:00:00+01:00").getTime();
 
