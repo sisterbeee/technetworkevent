@@ -18,6 +18,8 @@ import {
   Twitter,
   Linkedin,
   Mail,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 
 import speakerAmara from "@/assets/speaker-amara.jpg";
