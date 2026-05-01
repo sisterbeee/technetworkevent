@@ -26,6 +26,7 @@ import speakerBuh from "@/assets/speaker-buh.jpg";
 import speakerEkundayo from "@/assets/speaker-ekundayo.jpg";
 import speakerOlarewaju from "@/assets/speaker-olarewaju.jpg";
 import speakerAdubiOlajide from "@/assets/speaker-adubi-olajide.jpg";
+import logoGlyph from "@/assets/logo-glyph.png";
 
 /* ------------------------------------------------------------------ */
 /* Event constants                                                     */
@@ -122,9 +123,11 @@ function useCountdown(target: number) {
 function Wordmark() {
   return (
     <Link to="/" className="group inline-flex items-center gap-2 font-tech font-bold">
-      <span className="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-[0_0_18px_hsl(var(--primary)/0.55)]">
-        <Sparkles className="h-4 w-4" />
-      </span>
+      <img
+        src={logoGlyph}
+        alt=""
+        className="h-8 w-8 object-contain drop-shadow-[0_0_18px_hsl(var(--primary)/0.55)]"
+      />
       <span className="text-sm tracking-[0.22em] text-foreground">
         TECH<span className="text-primary">.</span>NETWORK
       </span>
