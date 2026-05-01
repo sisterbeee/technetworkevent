@@ -344,7 +344,7 @@ function Speakers() {
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-card via-card/70 to-transparent" />
               </div>
               {s.tag && (
-                <span className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-amber-400 px-2.5 py-1 font-mono-tech text-[10px] font-bold uppercase tracking-[0.18em] text-black shadow-lg shadow-amber-400/40">
+                <span className="absolute left-4 top-4 z-10 rounded-full bg-primary px-3 py-1 font-mono-tech text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-lg shadow-primary/50 ring-1 ring-white/20">
                   {s.tag}
                 </span>
               )}
