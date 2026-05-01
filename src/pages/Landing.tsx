@@ -26,6 +26,7 @@ import speakerBuh from "@/assets/speaker-buh.jpg";
 import speakerEkundayo from "@/assets/speaker-ekundayo.jpg";
 import speakerOlarewaju from "@/assets/speaker-olarewaju.jpg";
 import speakerAdubiOlajide from "@/assets/speaker-adubi-olajide.jpg";
+import logoGlyph from "@/assets/logo-glyph.png";
 
 /* ------------------------------------------------------------------ */
 /* Event constants                                                     */
