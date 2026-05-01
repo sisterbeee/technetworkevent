@@ -22,11 +22,10 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-import speakerAmara from "@/assets/speaker-amara.jpg";
-import speakerTunde from "@/assets/speaker-tunde.jpg";
-import speakerPriya from "@/assets/speaker-priya.jpg";
-import speakerKai from "@/assets/speaker-kai.jpg";
 import speakerBuh from "@/assets/speaker-buh.jpg";
+import speakerEkundayo from "@/assets/speaker-ekundayo.jpg";
+import speakerOlarewaju from "@/assets/speaker-olarewaju.jpg";
+import speakerAdubiOlajide from "@/assets/speaker-adubi-olajide.jpg";
 
 /* ------------------------------------------------------------------ */
 /* Event constants                                                     */
@@ -55,10 +54,9 @@ const NAV_LINKS = [
 
 const SPEAKERS = [
   { name: "Adubi Adebukola", role: "Web Developer · Social Media Manager · CEO, Bee's Collection", img: speakerBuh, tag: "Host" },
-  { name: "Amara Okeke", role: "Principal Engineer · Anthropic", img: speakerAmara },
-  { name: "Tunde Bakare", role: "Co-founder & CTO · Flutterwave", img: speakerTunde },
-  { name: "Priya Raman", role: "Director of AI · DeepMind", img: speakerPriya },
-  { name: "Kai Andersen", role: "VP Platform · Vercel", img: speakerKai },
+  { name: "Ekundayo Victor", role: "AI Automation · Social Media Manager · CEO, VC Media", img: speakerEkundayo },
+  { name: "Olarewaju Michael", role: "Software Developer", img: speakerOlarewaju },
+  { name: "Adubi Olajide", role: "Video Editor · CEO, Rampage Crew", img: speakerAdubiOlajide },
 ];
 
 const SCHEDULE = [
@@ -324,7 +322,7 @@ function Speakers() {
           title="The people building tomorrow."
           subtitle="Operators, researchers, and founders who ship at the frontier."
         />
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SPEAKERS.map((s, i) => (
             <motion.div
               key={s.name}
@@ -346,7 +344,7 @@ function Speakers() {
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-card via-card/70 to-transparent" />
               </div>
               {s.tag && (
-                <span className="absolute left-4 top-4 rounded-full border border-primary/40 bg-primary/15 px-2.5 py-1 font-mono-tech text-[10px] uppercase tracking-[0.18em] text-primary backdrop-blur-md">
+                <span className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-amber-400 px-2.5 py-1 font-mono-tech text-[10px] font-bold uppercase tracking-[0.18em] text-black shadow-lg shadow-amber-400/40">
                   {s.tag}
                 </span>
               )}
