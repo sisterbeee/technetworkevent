@@ -186,8 +186,12 @@ function StickyNav() {
             </a>
           ))}
         </nav>
-        <Button asChild size="sm" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90">
-          <a href="#register">Register</a>
+        <Button
+          asChild
+          size="sm"
+          className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.45)] transition-all hover:scale-[1.04] hover:opacity-95 hover:shadow-[0_0_28px_hsl(var(--primary)/0.65)]"
+        >
+          <a href="#register">Register Now</a>
         </Button>
       </div>
     </header>
@@ -742,11 +746,14 @@ export default function Landing() {
       <StickyNav />
       <main>
         <Hero />
+        <QuickInfoBar />
         <Speakers />
+        <MidCTA />
         <Schedule />
         <Register />
         <Sponsors />
         <FAQSection />
+        <FinalCTA />
       </main>
       <Footer />
       <a
