@@ -572,6 +572,9 @@ function Register() {
               Free for builders. 600 seats only. We'll email your ticket and venue
               details before the event.
             </p>
+            <p className="mt-3 font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">
+              Join the future of tech today
+            </p>
 
             {submitted ? (
               <div className="mt-8 flex items-center gap-3 rounded-2xl border border-primary/30 bg-primary/10 px-5 py-4">
@@ -600,10 +603,10 @@ function Register() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-12 bg-gradient-to-r from-primary to-accent px-6 text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.45)] hover:opacity-95"
+                  className="group h-12 bg-gradient-to-r from-primary to-accent px-6 text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.55)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_45px_hsl(var(--primary)/0.75)]"
                 >
                   Get Ticket
-                  <ArrowRight />
+                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
                 </Button>
               </form>
             )}
