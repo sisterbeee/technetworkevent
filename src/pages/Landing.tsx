@@ -20,6 +20,7 @@ import {
   Mail,
   Phone,
   MessageCircle,
+  Clock,
 } from "lucide-react";
 
 import speakerBuh from "@/assets/speaker-buh.jpg";
@@ -35,6 +36,7 @@ import logoGlyph from "@/assets/logo-glyph.png";
 const EVENT_NAME = "TECH NETWORK";
 const EVENT_TAGLINE = "The Future of Tech Starts Here";
 const EVENT_DATE_LABEL = "October 19, 2026";
+const EVENT_TIME_LABEL = "9:00 AM – Late";
 const EVENT_LOCATION = "Ikorodu, Lagos";
 const CONTACT_EMAIL = "adubiadebukola788@gmail.com";
 const CONTACT_PHONE_DISPLAY = "+234 806 081 0552";
@@ -184,8 +186,12 @@ function StickyNav() {
             </a>
           ))}
         </nav>
-        <Button asChild size="sm" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90">
-          <a href="#register">Register</a>
+        <Button
+          asChild
+          size="sm"
+          className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.45)] transition-all hover:scale-[1.04] hover:opacity-95 hover:shadow-[0_0_28px_hsl(var(--primary)/0.65)]"
+        >
+          <a href="#register">Register Now</a>
         </Button>
       </div>
     </header>
@@ -275,21 +281,132 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-10 flex flex-col items-center justify-center gap-4"
         >
-          <Button
-            asChild
-            size="lg"
-            className="group h-12 bg-gradient-to-r from-primary to-accent px-7 text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.45)] hover:opacity-95"
-          >
-            <a href="#register">
-              Register Now
-              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-            </a>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="h-12 border-border/60 bg-transparent px-7 text-foreground hover:bg-card">
-            <a href="#schedule">View Schedule</a>
-          </Button>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <PrimaryCTA href="#register" label="Register Now" />
+            <Button asChild variant="outline" size="lg" className="h-12 border-border/60 bg-transparent px-7 text-foreground hover:bg-card">
+              <a href="#schedule">View Schedule</a>
+            </Button>
+          </div>
+          <p className="font-mono-tech text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+            Free · 600 seats only · Secure your spot now
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Reusable Primary CTA                                                */
+/* ------------------------------------------------------------------ */
+
+function PrimaryCTA({ href, label = "Register Now" }: { href: string; label?: string }) {
+  return (
+    <a
+      href={href}
+      className="group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary via-primary to-accent px-8 font-tech text-sm font-semibold tracking-wide text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.55)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_50px_hsl(var(--primary)/0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+    >
+      <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+      <span className="relative">{label}</span>
+      <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+    </a>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Quick Info Bar                                                      */
+/* ------------------------------------------------------------------ */
+
+function QuickInfoBar() {
+  const items = [
+    { Icon: Calendar, label: "Date", value: EVENT_DATE_LABEL },
+    { Icon: Clock, label: "Time", value: EVENT_TIME_LABEL },
+    { Icon: MapPin, label: "Location", value: EVENT_LOCATION },
+  ];
+  return (
+    <section className="relative -mt-6 pb-4 sm:pb-8">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="glass grid grid-cols-1 gap-4 rounded-2xl p-5 sm:grid-cols-3 sm:gap-2 sm:p-6"
+        >
+          {items.map(({ Icon, label, value }) => (
+            <div key={label} className="flex items-center gap-4 sm:justify-center">
+              <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-full bg-primary/10 ring-1 ring-primary/30">
+                <Icon className="h-5 w-5 text-primary" />
+              </span>
+              <div className="text-left">
+                <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{label}</p>
+                <p className="font-tech text-sm font-semibold text-foreground sm:text-base">{value}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Mid-page & Final CTA banners                                        */
+/* ------------------------------------------------------------------ */
+
+function MidCTA() {
+  return (
+    <section className="relative py-12 sm:py-16">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="glass relative overflow-hidden rounded-3xl p-8 text-center sm:p-10"
+        >
+          <div className="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-primary/25 blur-3xl" />
+          <div className="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-accent/25 blur-3xl" />
+          <div className="relative">
+            <p className="font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">Don't miss out</p>
+            <h3 className="mt-3 font-tech text-2xl font-bold tracking-tight sm:text-3xl">
+              Join the future of tech today.
+            </h3>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground sm:text-base">
+              Limited seats. Big ideas. Real builders. Lock in your spot before registration closes.
+            </p>
+            <div className="mt-6 flex justify-center">
+              <PrimaryCTA href="#register" label="Register Now" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function FinalCTA() {
+  return (
+    <section className="relative py-20 sm:py-28">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.12),transparent_70%)]" />
+      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="font-tech text-3xl font-bold tracking-tight sm:text-5xl">
+            Ready to <span className="text-shimmer">level up?</span>
+          </h3>
+          <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
+            One day. Four speakers. Hundreds of builders. Secure your free seat now.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <PrimaryCTA href="#register" label="Secure Your Spot" />
+          </div>
         </motion.div>
       </div>
     </section>
@@ -455,6 +572,9 @@ function Register() {
               Free for builders. 600 seats only. We'll email your ticket and venue
               details before the event.
             </p>
+            <p className="mt-3 font-mono-tech text-[11px] uppercase tracking-[0.22em] text-primary">
+              Join the future of tech today
+            </p>
 
             {submitted ? (
               <div className="mt-8 flex items-center gap-3 rounded-2xl border border-primary/30 bg-primary/10 px-5 py-4">
@@ -483,10 +603,10 @@ function Register() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-12 bg-gradient-to-r from-primary to-accent px-6 text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.45)] hover:opacity-95"
+                  className="group h-12 bg-gradient-to-r from-primary to-accent px-6 text-primary-foreground shadow-[0_0_30px_hsl(var(--primary)/0.55)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_45px_hsl(var(--primary)/0.75)]"
                 >
                   Get Ticket
-                  <ArrowRight />
+                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
                 </Button>
               </form>
             )}
@@ -629,11 +749,14 @@ export default function Landing() {
       <StickyNav />
       <main>
         <Hero />
+        <QuickInfoBar />
         <Speakers />
+        <MidCTA />
         <Schedule />
         <Register />
         <Sponsors />
         <FAQSection />
+        <FinalCTA />
       </main>
       <Footer />
       <a
