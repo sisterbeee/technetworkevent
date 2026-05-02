@@ -70,9 +70,9 @@ const SCHEDULE = [
   { time: "11:15", title: "AI Automation That Runs Your Business While You Sleep", desc: "Ekundayo Victor breaks down real automation stacks for content, DMs, and operations — and how VC Media uses them to scale social media without burning out." },
   { time: "12:30", title: "Founder Lunch + Lightning Demos", desc: "Six builders, six minutes each. Show the AI workflow, skip the slides." },
   { time: "14:00", title: "Shipping AI-Native Software, Faster", desc: "Olarewaju Michael on how developers should actually use AI tools — from prompt-driven coding to building production features in a fraction of the time." },
-  { time: "15:00", title: "Full-Stack in the Age of AI — From Idea to Deployed App", desc: "Makinde Olasubomi shares how full-stack engineers can pair AI copilots with modern frameworks to architect, build, and ship complete web apps end-to-end at startup speed." },
-  { time: "15:30", title: "AI for Video Editors & Creative Teams", desc: "Adubi Olajide (CEO, Rampage Crew) shows how to cut editing time in half using AI for cuts, captions, b-roll, and post-production workflows." },
-  { time: "16:45", title: "Panel — Using AI Tools The Right Way", desc: "All four speakers, one stage. Honest takes on what's hype, what's worth your time, and the prompts/tools they actually use every day." },
+  { time: "15:15", title: "Full-Stack in the Age of AI — From Idea to Deployed App", desc: "Makinde Olasubomi shares how full-stack engineers can pair AI copilots with modern frameworks to architect, build, and ship complete web apps end-to-end at startup speed." },
+  { time: "16:30", title: "AI for Video Editors & Creative Teams", desc: "Adubi Olajide (CEO, Rampage Crew) shows how to cut editing time in half using AI for cuts, captions, b-roll, and post-production workflows." },
+  { time: "17:30", title: "Panel — Using AI Tools The Right Way", desc: "All five speakers, one stage. Honest takes on what's hype, what's worth your time, and the prompts/tools they actually use every day." },
   { time: "18:00", title: "Afterparty — Neon Garden", desc: "Live set, open bar, and the conversations the talks couldn't fit." },
 ];
 
