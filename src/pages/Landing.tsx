@@ -122,13 +122,16 @@ function useCountdown(target: number) {
 
 function Wordmark() {
   return (
-    <Link to="/" className="group inline-flex items-center gap-2 font-tech font-bold">
-      <img
-        src={logoGlyph}
-        alt=""
-        className="h-8 w-8 object-contain drop-shadow-[0_0_18px_hsl(var(--primary)/0.55)]"
-      />
-      <span className="text-sm tracking-[0.22em] text-foreground">
+    <Link to="/" className="group inline-flex items-center gap-2.5 font-tech font-bold">
+      <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 via-primary/5 to-transparent ring-1 ring-primary/20 shadow-[inset_0_1px_0_hsl(var(--primary)/0.25),0_8px_24px_-8px_hsl(var(--primary)/0.55)] transition-all duration-500 group-hover:ring-primary/40 group-hover:shadow-[inset_0_1px_0_hsl(var(--primary)/0.35),0_10px_28px_-6px_hsl(var(--primary)/0.65)]">
+        <span className="pointer-events-none absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.35),transparent_60%)] opacity-70" />
+        <img
+          src={logoGlyph}
+          alt=""
+          className="relative h-6 w-6 object-contain drop-shadow-[0_0_10px_hsl(var(--primary)/0.7)] transition-transform duration-500 group-hover:scale-105"
+        />
+      </span>
+      <span className="text-sm font-semibold tracking-[0.24em] bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
         TECH<span className="text-primary">.</span>NETWORK
       </span>
     </Link>
@@ -320,45 +323,49 @@ function SectionHeader({
 function Speakers() {
   return (
     <section id="speakers" className="relative py-24 sm:py-32">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.06),transparent_60%)]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Speakers"
-          title="The people building tomorrow."
-          subtitle="Operators, researchers, and founders who ship at the frontier."
+          title="Meet the Speakers"
+          subtitle="A handpicked lineup of operators and builders shipping with AI every day."
         />
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4">
           {SPEAKERS.map((s, i) => (
             <motion.div
               key={s.name}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]"
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative overflow-hidden rounded-3xl bg-card shadow-[0_4px_20px_-8px_hsl(240_30%_14%/0.12)] ring-1 ring-border/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_hsl(var(--primary)/0.35),0_0_0_1px_hsl(var(--primary)/0.25)]"
             >
-              <div className="aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.name}
                   loading="lazy"
                   width={768}
                   height={896}
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-card via-card/70 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/85 via-40% to-transparent to-65%" />
               </div>
               {s.tag && (
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-primary px-3 py-1 font-mono-tech text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-lg shadow-primary/50 ring-1 ring-white/20">
                   {s.tag}
                 </span>
               )}
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <h3 className="font-tech text-lg font-semibold text-foreground">{s.name}</h3>
-                <p className="mt-0.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                <h3 className="font-tech text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                  {s.name}
+                </h3>
+                <p className="mt-1.5 text-[12px] leading-snug text-muted-foreground sm:text-[13px]">
                   {s.role}
                 </p>
+                <span className="mt-3 block h-px w-8 origin-left scale-x-0 bg-gradient-to-r from-primary to-transparent transition-transform duration-500 group-hover:scale-x-100" />
               </div>
-              <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary/0 transition-all duration-300 group-hover:ring-primary/30" />
+              <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-primary/0 transition-all duration-500 group-hover:ring-primary/30" />
             </motion.div>
           ))}
         </div>
