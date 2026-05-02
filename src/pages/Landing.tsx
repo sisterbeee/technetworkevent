@@ -20,6 +20,7 @@ import {
   Mail,
   Phone,
   MessageCircle,
+  Clock,
 } from "lucide-react";
 
 import speakerBuh from "@/assets/speaker-buh.jpg";
@@ -35,6 +36,7 @@ import logoGlyph from "@/assets/logo-glyph.png";
 const EVENT_NAME = "TECH NETWORK";
 const EVENT_TAGLINE = "The Future of Tech Starts Here";
 const EVENT_DATE_LABEL = "October 19, 2026";
+const EVENT_TIME_LABEL = "9:00 AM – Late";
 const EVENT_LOCATION = "Ikorodu, Lagos";
 const CONTACT_EMAIL = "adubiadebukola788@gmail.com";
 const CONTACT_PHONE_DISPLAY = "+234 806 081 0552";
