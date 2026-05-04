@@ -77,7 +77,14 @@ const SCHEDULE = [
 ];
 
 const SPONSORS = [
-  "STRIPE", "VERCEL", "OPENAI", "FIGMA", "LINEAR", "SUPABASE", "ANTHROPIC", "RAYCAST",
+  { name: "Stripe", slug: "stripe" },
+  { name: "Vercel", slug: "vercel" },
+  { name: "OpenAI", slug: "openai" },
+  { name: "Figma", slug: "figma" },
+  { name: "Linear", slug: "linear" },
+  { name: "Supabase", slug: "supabase" },
+  { name: "Anthropic", slug: "anthropic" },
+  { name: "Raycast", slug: "raycast" },
 ];
 
 const FAQ = [
@@ -598,7 +605,7 @@ function Register() {
                 <Input
                   required
                   type="email"
-                  placeholder="you@domain.com"
+                  placeholder="Enter your Gmail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="h-12 rounded-full border-border/60 bg-background/40 px-5 placeholder:text-muted-foreground/70 focus-visible:ring-primary"
@@ -626,13 +633,19 @@ function Sponsors() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader eyebrow="Sponsors" title="Backed by the best." />
         <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60 sm:grid-cols-4">
-          {SPONSORS.map((name) => (
+          {SPONSORS.map((s) => (
             <div
-              key={name}
-              className="group flex items-center justify-center bg-card/60 px-6 py-10 transition-all hover:bg-card"
+              key={s.slug}
+              className="group flex flex-col items-center justify-center gap-3 bg-card/60 px-6 py-10 transition-all hover:bg-card"
             >
-              <span className="font-tech text-lg font-bold tracking-[0.18em] text-muted-foreground transition-all group-hover:text-foreground group-hover:[text-shadow:0_0_18px_hsl(var(--primary)/0.55)]">
-                {name}
+              <img
+                src={`https://cdn.simpleicons.org/${s.slug}/737373`}
+                alt={`${s.name} logo`}
+                loading="lazy"
+                className="h-8 w-auto opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:drop-shadow(0_0_14px_hsl(var(--primary)/0.55))]"
+              />
+              <span className="font-tech text-xs font-semibold tracking-[0.22em] text-muted-foreground transition-colors group-hover:text-foreground">
+                {s.name.toUpperCase()}
               </span>
             </div>
           ))}
