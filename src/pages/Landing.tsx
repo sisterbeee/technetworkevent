@@ -638,12 +638,22 @@ function Sponsors() {
               key={s.slug}
               className="group flex flex-col items-center justify-center gap-3 bg-card/60 px-6 py-10 transition-all hover:bg-card"
             >
-              <img
-                src={`https://cdn.simpleicons.org/${s.slug}/737373`}
-                alt={`${s.name} logo`}
-                loading="lazy"
-                className="h-8 w-auto opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:drop-shadow(0_0_14px_hsl(var(--primary)/0.55))]"
-              />
+              {("svg" in s && s.svg) ? (
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-label={`${s.name} logo`}
+                  className="h-8 w-8 fill-muted-foreground opacity-70 transition-all duration-300 group-hover:fill-foreground group-hover:opacity-100 group-hover:[filter:drop-shadow(0_0_14px_hsl(var(--primary)/0.55))]"
+                >
+                  <path d={s.svg as string} />
+                </svg>
+              ) : (
+                <img
+                  src={`https://cdn.simpleicons.org/${s.slug}/737373`}
+                  alt={`${s.name} logo`}
+                  loading="lazy"
+                  className="h-8 w-auto opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:drop-shadow(0_0_14px_hsl(var(--primary)/0.55))]"
+                />
+              )}
               <span className="font-tech text-xs font-semibold tracking-[0.22em] text-muted-foreground transition-colors group-hover:text-foreground">
                 {s.name.toUpperCase()}
               </span>
